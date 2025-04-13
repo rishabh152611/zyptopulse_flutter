@@ -7,7 +7,7 @@ class AuthService {
   // Provided Directus API URL
   static const String _baseUrl = 'https://api.fluttercrypto.agpro.co.in';
 
-  final FlutterSecureStorage secureStorage = FlutterSecureStorage();
+  static const FlutterSecureStorage secureStorage = FlutterSecureStorage();
 
   Future<bool> signUp({
     required String name,

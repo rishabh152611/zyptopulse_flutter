@@ -8,18 +8,18 @@ import 'screens/signup_screen.dart';
 import 'screens/home_screen.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
-   MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-   bool isDarkMode = false;
+  bool isDarkMode = false;
 
   final String _themeKey = 'isDarkMode';
 
@@ -52,16 +52,15 @@ class _MyAppState extends State<MyApp> {
     routes: [
       GoRoute(path: '/', builder: (context, state) => const SplashScreen()),
       GoRoute(path: '/login', builder: (context, state) => const LoginScreen()),
-      GoRoute(path: '/signup', builder: (context, state) => const SignupScreen()),
+      GoRoute(
+          path: '/signup', builder: (context, state) => const SignupScreen()),
       GoRoute(path: '/home', builder: (context, state) => const LayoutScreen()),
-
     ],
   );
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-
       title: 'ZyptoPulse',
       debugShowCheckedModeBanner: false,
       routerConfig: _router,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:zyptopulse/layout_screen.dart';
 import '../services/auth_service.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -16,7 +15,8 @@ class _LoginScreenState extends State<LoginScreen> {
   bool isLoading = false;
 
   Future<void> _login() async {
-    if (emailController.text.trim().isEmpty || passwordController.text.isEmpty) {
+    if (emailController.text.trim().isEmpty ||
+        passwordController.text.isEmpty) {
       _showError('Please enter both email and password');
       return;
     }
@@ -30,7 +30,6 @@ class _LoginScreenState extends State<LoginScreen> {
     setState(() {
       isLoading = false;
     });
-
 
     if (token != null) {
       context.go('/home');
@@ -73,7 +72,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          border: Border.all(color: Colors.white.withOpacity(0.2), width: 2),
+                          border: Border.all(
+                              color: Colors.white.withOpacity(0.2), width: 2),
                         ),
                         padding: const EdgeInsets.all(15),
                         child: const Icon(
@@ -109,10 +109,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide.none,
                     ),
-                    prefixIcon: const Icon(Icons.email, color: Color(0xFF2DCC70)),
+                    prefixIcon:
+                        const Icon(Icons.email, color: Color(0xFF2DCC70)),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Color(0xFF2DCC70), width: 1),
+                      borderSide:
+                          const BorderSide(color: Color(0xFF2DCC70), width: 1),
                     ),
                   ),
                 ),
@@ -130,10 +132,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide.none,
                     ),
-                    prefixIcon: const Icon(Icons.lock, color: Color(0xFF2DCC70)),
+                    prefixIcon:
+                        const Icon(Icons.lock, color: Color(0xFF2DCC70)),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(color: Color(0xFF2DCC70), width: 1),
+                      borderSide:
+                          const BorderSide(color: Color(0xFF2DCC70), width: 1),
                     ),
                   ),
                 ),
@@ -155,13 +159,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: isLoading
                         ? const CircularProgressIndicator(color: Colors.white)
                         : const Text(
-                      'Login',
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
+                            'Login',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                            ),
+                          ),
                   ),
                 ),
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:zyptopulse/services/token_Service.dart';
-import '../services/auth_service.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -45,7 +44,8 @@ class _SplashScreenState extends State<SplashScreen> {
               Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  border: Border.all(color: Colors.white.withOpacity(0.2), width: 2),
+                  border: Border.all(
+                      color: Colors.white.withOpacity(0.2), width: 2),
                 ),
                 padding: const EdgeInsets.all(20),
                 child: const Icon(

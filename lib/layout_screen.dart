@@ -4,7 +4,6 @@ import 'package:zyptopulse/screens/home_screen.dart';
 
 import 'widgets/navbar_widget.dart';
 
-
 class LayoutScreen extends StatefulWidget {
   const LayoutScreen({super.key});
 
@@ -13,20 +12,17 @@ class LayoutScreen extends StatefulWidget {
 }
 
 class _LayoutScreenState extends State<LayoutScreen> {
-
-
   int _selectedIndex = 0;
 
   final List<Widget> _screens = [
-    MarketsStreamScreen(),
+    const MarketsStreamScreen(),
 
     // ServiceSelectionScreen(),
-    FavoritesScreen(),
-    FavoritesScreen(),
-    FavoritesScreen(),
-    FavoritesScreen(),
+    const FavoritesScreen(),
+    const FavoritesScreen(),
+    const FavoritesScreen(),
+    const FavoritesScreen(),
     // RequestServiceScreen(),
-
   ];
 
   void _onItemTapped(int index) {
@@ -38,7 +34,6 @@ class _LayoutScreenState extends State<LayoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: _screens[_selectedIndex],
       bottomNavigationBar: NavBarWidget(
         selectedIndex: _selectedIndex,
